@@ -1,4 +1,4 @@
- var sql = require('mssql');
+var sql = require('mssql');
 
 
            var config = {
@@ -10,7 +10,7 @@
            
 
 
-           var report = function ( req, res) {
+           var customer = function ( req, res) {
             // connect to your database
             sql. connect( config, function ( err) {
             if ( err) console. log( err);
@@ -18,7 +18,7 @@
             // create Request object
             var request = new sql. Request();
             // query to the database and get the records
-            request. query( 'select * from [reports].[CustomerMager]', function ( err, recordset) {
+            request. query( 'select * from [dbo].[Customers]', function ( err, recordset) {
             if ( err) console. log( err)
             
             // send records as a response
@@ -30,5 +30,5 @@
 
                    //  module.exports.report = report;
             //  module.exports.DB = DB;
-            module.exports.report = report;
+            module.exports.customer = customer;
 
