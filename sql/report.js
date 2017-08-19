@@ -23,6 +23,7 @@ var sql = require('mssql');
             
             // send records as a response
             res. send( recordset);
+            sql.close() 
             });
             });
             } //);
